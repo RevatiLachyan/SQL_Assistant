@@ -20,3 +20,11 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Backup and export files - do not commit these
+backup_export/
+*backup_export*
+*_backup*
+*backup*.csv
+*backup*.db
+*.bak
