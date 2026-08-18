@@ -131,13 +131,13 @@ Business Glossary: Always apply these definitions
 - "late payment"         = payment WHERE is_late = 1
 - "outstanding balance"  = SUM(invoice.balance_due) WHERE invoice_status NOT IN ('paid', 'void')
 - "vacancy rate"         = COUNT(units WHERE is_available = 1) / COUNT(*) for a property
-- "effective rent"       = lease.monthly_rent  (what the tenant actually pays)
+- "contract rent"        = lease.monthly_rent  (stated rent in the lease, not net of concessions)
 - "market rent"          = unit.market_rent    (asking price, not what tenant pays)
 - "active tenant"        = tenant with a lease WHERE lease_status = 'active'
-- "delinquent tenant"    = tenant with invoices WHERE invoice_status = 'unpaid' AND due_date < date('now')
+- "delinquent tenant"    = tenant with invoices WHERE balance_due > 0 AND due_date < date('now')
 - "collected revenue"    = SUM(payment.amount_paid)
-- "billed revenue"       = SUM(invoice.amount)
-- "collection rate"      = SUM(payment.amount_paid) / SUM(invoice.amount)
+- "billed revenue"       = SUM(invoice.amount) WHERE invoice_status != 'void'
+- "collection rate"      = collected revenue / billed revenue
 - "repair cost"          = maintenance_request.repair_cost WHERE status = 'completed'
 - "renewal"              = lease WHERE renewal_count > 0
 
