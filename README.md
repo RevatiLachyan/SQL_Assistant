@@ -14,7 +14,9 @@ PropQuery lets anyone type a question in plain English, for example "which tenan
 Demo
 
 A short walkthrough of the app in action, from typing a question to seeing the SQL, the table, and the chart: demo/SQL_Assistant_working.mp4
+
 Screenshot: 
+
 <img width="3247" height="1733" alt="image" src="https://github.com/user-attachments/assets/65860f20-19d1-4bb5-8067-80ffc2027cd6" />
 
 Why the business logic matters
